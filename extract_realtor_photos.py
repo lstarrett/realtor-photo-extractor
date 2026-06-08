@@ -85,7 +85,7 @@ def main() -> int:
         "-o",
         "--output",
         type=Path,
-        help="Output directory for photos (default: photos/<html-stem>/)",
+        help="Output directory for photos (default: photos/)",
     )
     parser.add_argument(
         "--thumb",
@@ -106,7 +106,7 @@ def main() -> int:
         print(exc, file=sys.stderr)
         return 1
 
-    out_dir = args.output or Path("photos") / args.html.stem
+    out_dir = args.output or Path("photos")
     out_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"Found {len(photo_urls)} photos. Saving to {out_dir}/")

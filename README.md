@@ -6,34 +6,43 @@ Realtor.com serves compressed images in the browser. This tool reads the listing
 
 ## Requirements
 
-- Python 3.9 or newer
+- Python 3.9 or newer (Homebrew installs a suitable Python automatically)
 - No third-party packages — uses only the standard library
 
 ## Usage
 
-### 1. Save the listing page
+### 1. Install the script
+
+Install via [Homebrew](https://brew.sh):
+
+```bash
+brew tap lstarrett/utilities
+brew install realtor-photo-extractor
+```
+
+This installs the `realtor-photo-extractor` command on your PATH.
+
+### 2. Save the listing page
 
 1. Open a listing on [realtor.com](https://www.realtor.com) in your browser.
 2. Wait for the page to finish loading (including the photo gallery).
 3. Right-click on the page and choose **Save Page As…** (or **Save As…**).
-4. Save the file as **Web Page, Complete** (or **HTML only** — both work). Note where you saved it.
+4. Save the file as **Web Page, Complete** (or **HTML only** — both work). Note where you saved it (saving the page to a dedicated directory named for the property is recommended, so that photos can be extracted to the same place)
 
-### 2. Run the script
+### 3. Run the script
 
-From this directory, pass the saved HTML file as the argument:
+Pass the saved HTML file as the argument:
 
 ```bash
-python3 extract_realtor_photos.py path/to/listing.html
+realtor-photo-extractor path/to/listing.html
 ```
 
-By default, photos are saved to `photos/<filename>/` (e.g. `photos/listing/` if you saved as `listing.html`).
+By default, photos are saved to a `photos/` folder in the current directory.
 
-### 3. Choose an output directory (optional)
-
-Use `-o` to specify where photos should go:
+Optionally, use `-o` to choose where photos should go:
 
 ```bash
-python3 extract_realtor_photos.py path/to/listing.html -o ~/Pictures/my-listing
+realtor-photo-extractor path/to/listing.html -o ~/Pictures/my-listing
 ```
 
 ### 4. Check the results
@@ -45,14 +54,14 @@ The script prints progress as each photo downloads. When it finishes, open the o
 
 | Flag             | Description                                               |
 | ---------------- | --------------------------------------------------------- |
-| `-o`, `--output` | Output directory (default: `photos/<html-stem>/`)         |
+| `-o`, `--output` | Output directory (default: `photos/`)                     |
 | `--thumb`        | Download thumbnail URLs instead of full-resolution images |
 
 
 ## Example
 
 ```bash
-python3 extract_realtor_photos.py ~/Downloads/123-Main-St.html -o ~/Pictures/123-main-st
+realtor-photo-extractor ~/Downloads/123-Main-St.html -o ~/Pictures/123-main-st
 ```
 
 ## License
