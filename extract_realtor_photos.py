@@ -11,6 +11,8 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+__version__ = "1.1"
+
 NEXT_DATA_RE = re.compile(
     r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>',
     re.S,
@@ -79,6 +81,12 @@ def main() -> int:
             "Read a saved realtor.com listing HTML page and download "
             "full-resolution photos to a folder."
         )
+    )
+    parser.add_argument(
+        "--version",
+        "-v",
+        action="version",
+        version=f"%(prog)s {__version__}",
     )
     parser.add_argument("html", type=Path, help="Saved listing HTML file")
     parser.add_argument(
