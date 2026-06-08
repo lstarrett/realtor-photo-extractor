@@ -1,4 +1,4 @@
-# Realtor Photo Extractor
+# Realtor.com Photos Extractor
 
 A small Python script that downloads full-resolution photos from a saved [realtor.com](https://www.realtor.com) listing page.
 
@@ -42,10 +42,12 @@ The script prints progress as each photo downloads. When it finishes, open the o
 
 ## Options
 
-| Flag | Description |
-|------|-------------|
-| `-o`, `--output` | Output directory (default: `photos/<html-stem>/`) |
-| `--thumb` | Download thumbnail URLs instead of full-resolution images |
+
+| Flag             | Description                                               |
+| ---------------- | --------------------------------------------------------- |
+| `-o`, `--output` | Output directory (default: `photos/<html-stem>/`)         |
+| `--thumb`        | Download thumbnail URLs instead of full-resolution images |
+
 
 ## Example
 
