@@ -52,10 +52,12 @@ The script prints progress as each photo downloads. When it finishes, open the o
 ## Options
 
 
-| Flag             | Description                                               |
-| ---------------- | --------------------------------------------------------- |
-| `-o`, `--output` | Output directory (default: `photos/`)                     |
-| `--thumb`        | Download thumbnail URLs instead of full-resolution images |
+| Flag              | Description                                               |
+| ----------------- | --------------------------------------------------------- |
+| `-o`, `--output`  | Output directory (default: `photos/`)                     |
+| `--thumb`         | Download thumbnail URLs instead of full-resolution images |
+| `-v`, `--version` | Print the version and exit                                |
+| `-h`, `--help`    | Show usage help and exit                                  |
 
 
 ## Example
